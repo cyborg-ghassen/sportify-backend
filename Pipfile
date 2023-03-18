@@ -25,6 +25,7 @@ django-cors-headers = "*"
 django-rest-passwordreset = "*"
 django-import-export = "*"
 gunicorn = "*"
+tzdata = "*"
 
 [dev-packages]
 

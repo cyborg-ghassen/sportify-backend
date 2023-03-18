@@ -1,12 +1,11 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "ec2a517bc314c4c6401ab893228e96e592be664e13986dc88519138c1382af94"
+            "sha256": "c57fb58a7e2eea85a45645e01dde954d3ce5b4c2f0c6ba899baeb15931a90c1b"
         },
         "pipfile-spec": 6,
         "requires": {
-            "python_full_version": "3.10.6",
-            "python_version": "3.10"
+            "python_version": "3.9"
         },
         "sources": [
             {
@@ -50,19 +49,18 @@
         },
         "boto3": {
             "hashes": [
-                "sha256:401088934097260597495ae3c1842a59a701712a2d0e89443f8ede9161cd3806",
-                "sha256:49bef90c0ccd6cd87a304d8563958d2d00f2361e02ec953fc3c8bde87cf21112"
+                "sha256:619022059e255731f33cd9fe083b8fd62406efcbc07dc15660037bcaa1ba1255"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==1.26.92"
+            "version": "==1.26.94"
         },
         "botocore": {
             "hashes": [
-                "sha256:0bb40ca410ad26c5e9821ab1ab52ea894759ed2188afd99152261c5e895d8c9c",
-                "sha256:71a67c1f896db0204b97a8e199aa1188541d139ce3130ba52261ccd19b6e17db"
+                "sha256:01b9e066b9eea719ee852e91841b92c7371f6bd388cf6186b5d55508e0f7fa1b",
+                "sha256:3748b79e6fc95c19d890aa7439a53b9d468a4c4918439b2ba5cc3c13bfaff817"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==1.29.92"
+            "version": "==1.29.94"
         },
         "celery": {
             "hashes": [
@@ -371,6 +369,14 @@
             ],
             "markers": "python_version >= '3.6'",
             "version": "==1.1.0"
+        },
+        "gunicorn": {
+            "hashes": [
+                "sha256:9dcc4547dbb1cb284accfb15ab5667a0e5d1881cc443e0677b4882a4067a807e",
+                "sha256:e0a968b5ba15f8a328fdfd7ab1fcb5af4470c28aaf7e55df02a99bc13138e6e8"
+            ],
+            "index": "pypi",
+            "version": "==20.1.0"
         },
         "idna": {
             "hashes": [
@@ -765,6 +771,14 @@
             ],
             "markers": "python_version >= '3.7'",
             "version": "==0.6.0"
+        },
+        "setuptools": {
+            "hashes": [
+                "sha256:2ee892cd5f29f3373097f5a814697e397cf3ce313616df0af11231e2ad118077",
+                "sha256:b78aaa36f6b90a074c1fa651168723acbf45d14cb1196b6f02c0fd07f17623b2"
+            ],
+            "markers": "python_version >= '3.7'",
+            "version": "==67.6.0"
         },
         "six": {
             "hashes": [

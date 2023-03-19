@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'structure',
     'team',
     'session',
+    'utils',
 ]
 
 MIDDLEWARE = [

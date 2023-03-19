@@ -11,6 +11,7 @@ from rest_framework_simplejwt.views import TokenRefreshView, TokenObtainPairView
 from account.models import ClubUser
 from account.serializers import PermissionSerializer, GroupSerializer, UserSerializer, CustomTokenRefreshSerializer, \
     RegisterSerializer, LoginSerializer
+from utils.permission import ViewAdmin, ViewPlayer, ViewAdherent
 
 
 # Create your views here.
@@ -32,7 +33,7 @@ class LoginViewSet(ModelViewSet, TokenObtainPairView):
 
 class RegistrationViewSet(ModelViewSet, TokenObtainPairView):
     serializer_class = RegisterSerializer
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (AllowAny,)
     http_method_names = ['post']
 
     def create(self, request, *args, **kwargs):
@@ -71,7 +72,7 @@ class RefreshViewSet(viewsets.ViewSet, TokenRefreshView):
 
 class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [ViewAdmin | ViewPlayer | ViewAdherent]
     ordering_fields = "__all__"
     ordering = ['-id']
     queryset = ClubUser.objects.all()
@@ -99,7 +100,7 @@ class GroupViewSet(viewsets.ModelViewSet):
     """
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [ViewAdmin]
 
     def get_queryset(self):
         queryset = super(GroupViewSet, self).get_queryset()
@@ -118,4 +119,4 @@ class PermissionViewSet(viewsets.ModelViewSet):
     """
     queryset = Permission.objects.all()
     serializer_class = PermissionSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [ViewAdmin]

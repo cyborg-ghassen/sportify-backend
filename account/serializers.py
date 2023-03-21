@@ -114,8 +114,7 @@ class RegisterSerializer(UserSerializer):
 
     class Meta:
         model = ClubUser
-        fields = ['first_name', 'last_name', 'id', 'username', 'email', 'password', 'is_active', 'created_at',
-                  'avatar']
+        fields = ['first_name', 'last_name', 'id', 'username', 'email', 'password', 'is_active', 'created_at']
 
     def create(self, validated_data):
         try:
@@ -123,13 +122,3 @@ class RegisterSerializer(UserSerializer):
         except ObjectDoesNotExist:
             user = ClubUser.objects.create_user(**validated_data)
         return user
-
-    def validate_groups(self, obj):
-        request = self.context.get("request")
-        if request and hasattr(request, "user"):
-            user = request.user
-            if user.fournisseur_id:
-                if "admin" in [group.name for group in obj]:
-                    raise ValidationError("Permission Denied.")
-
-        return obj

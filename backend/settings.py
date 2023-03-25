@@ -29,7 +29,6 @@ DEBUG = os.environ.get('DEBUG', 'off') == 'ON'
 
 ALLOWED_HOSTS = ["*"]
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -41,18 +40,31 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'django_rest_passwordreset',
     'django_celery_beat',
     'channels',
     'rest_framework',
     'django_filters',
     'user_visit',
-    'account',
+    'accounts',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'structure',
     'team',
     'session',
     'utils',
 ]
+
+ACCOUNT_EMAIL_VERIFICATION = "optional"
+ACCOUNT_LOGIN_ATTEMPTS_LIMIT = 5
+ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 300
+ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
+STORE_TOKENS = True
+SOCIALACCOUNT_STORE_TOKENS = True
+DEFAULT_HTTP_PROTOCOL = "https"
+ACCOUNT_DEFAULT_HTTP_PROTOCOL = "https"
 
 CSRF_TRUSTED_ORIGINS = [
     "https://api-sportify.code2bind.com"
@@ -70,7 +82,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'backend.urls'
-AUTH_USER_MODEL = "account.ClubUser"
+AUTH_USER_MODEL = "accounts.ClubUser"
 
 TEMPLATES = [
     {
@@ -113,9 +125,6 @@ CORS_ALLOW_HEADERS = [
     "x-requested-with",
 ]
 
-
-
-
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
@@ -143,7 +152,6 @@ DATABASES = {
     }
 }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
@@ -165,7 +173,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
@@ -178,7 +185,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/

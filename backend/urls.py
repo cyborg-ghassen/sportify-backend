@@ -22,7 +22,7 @@ from rest_framework.documentation import include_docs_urls
 urlpatterns = [
     path('docs/', include_docs_urls(title='', public=False)),
     path('admin/', admin.site.urls),
-    path('v1/account/', include(('account.urls', 'account'), namespace='accounts-api')),
+    path('v1/accounts/', include(('accounts.urls', 'accounts'), namespace='accounts-api')),
     path('v1/session/', include(('session.urls', 'session'), namespace='sessions-api')),
     path('v1/team/', include(('team.urls', 'team'), namespace='teams-api')),
     path('v1/structure/', include(('structure.urls', 'structure'), namespace='structure-api')),

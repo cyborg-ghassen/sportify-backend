@@ -8,8 +8,8 @@ from rest_framework_simplejwt.exceptions import InvalidToken, TokenError
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework_simplejwt.views import TokenRefreshView, TokenObtainPairView
 
-from account.models import ClubUser
-from account.serializers import PermissionSerializer, GroupSerializer, UserSerializer, CustomTokenRefreshSerializer, \
+from accounts.models import ClubUser
+from accounts.serializers import PermissionSerializer, GroupSerializer, UserSerializer, CustomTokenRefreshSerializer, \
     RegisterSerializer, LoginSerializer
 from utils.permission import ViewAdmin, ViewPlayer, ViewAdherent
 

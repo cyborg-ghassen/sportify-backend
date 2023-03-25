@@ -8,7 +8,7 @@ from rest_framework_simplejwt.serializers import TokenRefreshSerializer, TokenOb
 from rest_framework_simplejwt.settings import api_settings
 from rest_framework_simplejwt.state import token_backend
 
-from account.models import ClubUser
+from accounts.models import ClubUser
 
 
 class PermissionSerializer(serializers.ModelSerializer):

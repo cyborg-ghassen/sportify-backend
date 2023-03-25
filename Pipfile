@@ -26,6 +26,7 @@ django-rest-passwordreset = "*"
 django-import-export = "*"
 gunicorn = "*"
 tzdata = "*"
+django-allauth = "*"
 
 [dev-packages]
 

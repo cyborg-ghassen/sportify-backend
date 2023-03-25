@@ -1,6 +1,6 @@
 from django.db import models
 
-from account.models import ClubUser
+from accounts.models import ClubUser
 from structure.models import Infrastructure, Sport
 from team.models import Team
 

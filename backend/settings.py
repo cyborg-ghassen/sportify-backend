@@ -55,7 +55,6 @@ INSTALLED_APPS = [
 ]
 
 SECURE_SSL_REDIRECT = True
-SESSION_COOKIE_SECURE = True
 
 CSRF_TRUSTED_ORIGINS = [
     "https://api-sportify.code2bind.com"

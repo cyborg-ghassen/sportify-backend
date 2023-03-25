@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-1hod5bnk$wl&8yn#=e7uc!un%b$8fd0f1-uu0tot9!yr)5#xt&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'off') == 'ON'
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["https://api-sportify.code2bind.com"]
 
 
 # Application definition
@@ -53,6 +53,10 @@ INSTALLED_APPS = [
     'session',
     'utils',
 ]
+
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+
 CSRF_TRUSTED_ORIGINS = [
     "https://api-sportify.code2bind.com"
 ]
